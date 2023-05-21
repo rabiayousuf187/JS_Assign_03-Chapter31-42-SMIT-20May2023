@@ -62,39 +62,26 @@ function ques5() {
   //     Write a program that shows the message “First fifteen
   // days of the month” if the date is less than 16th of the month
   // else shows “Last days of the month”.
-  third_subject = +prompt("Enter Your Third Subject Marks: ");
+  
+  let curDate = new Date();
+  let todayDate = curDate.getDate();
 
-  // Input total Marks
-  total_marks = +prompt("Enter Your total Marks: ");
+  console.log(`curDgetDate  ==== ${todayDate} `);
 
-  // Obtained Marks
-  obtained_marks = first_subject + second_subject + third_subject;
-
-  // Total Marks
-  percentage = (obtained_marks / total_marks) * 100;
-
-  if (percentage >= 80) {
-    grade = "A-one";
-    remarks = "Excellent";
-  } else if (percentage >= 70) {
-    grade = "A";
-    remarks = "Good";
-  } else if (percentage >= 60) {
-    grade = "B";
-    remarks = "You need to improve";
-  } else if (percentage < 60) {
-    grade = "Fail";
-    remarks = "Sorry";
-  } else {
-    alert("You didn't answer.");
+  if ( todayDate <=15 ) {
+    console.log(`First fifteen
+    days of the month`);
+    alert(`First fifteen
+    days of the month`);
   }
-
-  document.write("<h1>Marks Sheet</h1><br><br>");
-  document.write("<h4>Total marks: " + total_marks + "</h4>");
-  document.write("<h4>Marks obtained: " + obtained_marks + "</h4>");
-  document.write("<h4>Percentage: " + percentage + "%</h4>");
-  document.write("<h4>Grade: " + grade + "</h4>");
-  document.write("<h4>Remarks: " + remarks + "</h4>");
+  else if( todayDate >15 ){
+    console.log(`Last days of the month`);
+    alert(`Last days of the month`);
+  }
+  else{
+    console.log("Invalid");
+    alert("Invalid");
+  }
 }
 function ques7() {
   // Write a program that determines the minutes since
