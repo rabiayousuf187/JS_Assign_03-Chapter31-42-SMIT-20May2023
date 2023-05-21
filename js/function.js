@@ -655,8 +655,93 @@ function ques12(){
 
 
 }
-function ques8(){
-	
+function ques13(){
+	// 13. Write a JavaScript function that accepts two arguments, a
+        //     string and a letter and the function will count the number of
+        //     function | JAVASCRIPT
+
+        //     occurrences of the specified letter within the string.
+        //     Sample arguments : 'JSResourceS.com', 'o'
+
+
+        let input_arr = [];
+
+        let display_occurrences,
+            long_word,
+            letter;
+
+        var count_letter = 0;
+
+        function fun_find_occurrences(input , letter)
+        {
+
+            let input_arr = input.split("");
+
+            console.log("Number of words in Input " , input_arr.length);     
+            console.log("Input Array" , input_arr); 
+            console.log("letter in fun: " , letter); 
+            
+
+                           // Array nth 1st letter Display
+
+            for(var i = 0 ; i < input_arr.length ; i++)
+            {
+                    console.log(i , input_arr[i]);
+
+                    if( input_arr[i] === letter )
+                    {
+                        console.log(true);
+                        count_letter++;
+                        console.log("count_letter" , count_letter , input_arr[i]);
+                    }
+                    else
+                    {
+                        console.log(false, input_arr[i]);
+                    }
+                    
+                    if( i  == (input_arr.length) )
+                    {
+                            console.log("Input: " , input);
+                            console.log("No of Occurences: ", count_letter);
+                    }
+
+            }
+            
+            return count_letter;
+
+        }
+
+        // Input // profeSSor aLi nAqvi is a gReaT cOMputer sciEntIST.
+    let input = prompt("Enter Your Text:");
+    console.log(input);
+
+    if( input != null )
+    {
+        letter = prompt("Enter a letter\nTo find n times occurrences:");
+        console.log(letter);
+        
+        if( letter != null )
+        {
+            
+            display_occurrences = fun_find_occurrences(input , letter);
+
+            document.write("<h4>Find nTimes Occurrences of Letter:</h4>");
+            document.write("<br>Input: ", input);
+            document.write("<br>Letter Occurrences: " + letter);
+            document.write("<br>Number of occurrences: " + display_occurrences);
+                                
+        }
+        else
+        {
+            alert("You didn't enter a letter\nQuit Session.");
+        }
+                            
+    }
+    else
+    {
+        alert("You Quit Session.");
+    } 
+
 }
 function ques8(){
 	
