@@ -728,34 +728,56 @@ function ques8(){
 }
 
 function ques9(){
-        
-        // 9. Write a program to identify the smallst number in the
-        // given array.
-        // A = [ 24 , 53 , 78 , 91 , 12 ].
-
-        // declare
-       var num, small_num; 
+      
+        // 9.   Write a program to calculate overtime pay of employees.
+        //      Overtime is paid at the rate of Rs. 12.00 per hour for every hour
+        //      worked above 40 hours. Assume that employees do not work
+        //      for fractional part of an hour.
 
 
-       num = [ 24 , 53 , 78 , 91 , 12 ];
-       
-        for(var a = 1; a < num.length ; a++)
+        function cal_overtime( hours , overtime_pay )
         {
+            
 
-            if( num[0] > num[a])
+            if( hours > 40)
             {
-                console.log(num[a]);
-                small_num = num[a];
-                console.log("num[a]" ,  num[a]);
-                
+
+                let overtime = hours - 40;
+                let overtime_salary = overtime * 12;  
+
+                document.write("<h4>Calculate Overtime of an Employee:</h4>");
+                document.write("Employee Working Hours: <b>" + hours + "</b>");
+                document.write("<br><br>Overtime Hours: <b>" + overtime + "</b>");
+                document.write("<br><br>Overtime Pay: <b>" + overtime_salary + "</b>");
+
             }
-
-
+            else
+            {
+                alert("You have not any overtime hours\nOvertime start after 40 hours")
+            }
+           
         }
-        console.log("small_num" , small_num);
-        document.write("<h4>Smallest Number in Array:</h4><br>");
-        document.write("Array items: 24 , 53 , 78 , 91 , 12 <br><br>");
-        document.write("The smallest Number is " + small_num);
+
+
+//      Overtime is paid at the rate of Rs. 12.00 per hour
+        let overtime_pay = 12.00;   
+
+
+        alert("Calculate Overtime of an Employee:");
+
+        let hours = prompt("Enter Working Hours of an Employee\nOvertime is Start after 40 hours:");
+        console.log( hours );
+
+        if( hours != null ) 
+        {
+            hours = parseFloat(hours);
+            let display_over_time = cal_overtime( +hours , overtime_pay );
+            
+        }
+        else
+        {
+            alert("Your didn't enter distance \nQuit Session.");
+        } 
 }
 
 function ques10(){
