@@ -174,112 +174,41 @@ function ques5(){
 	}
 }
 function ques6(){
-	//     This if/else statement does not work. Try to fix it:
-	// var greeting;
-	// var hour = 13;
-	// if (hour < 18) {
-	// greeting = "Good day";
-	// else
-	// greeting = "Good evening";
-	// }
+	 // 6. Writ.e a function that computes factorial of a number.
+	 let result_of_factorial;
 
+	 function fun_factorial(num)
+	 {
+		 // let a = num;
+		 result_of_factorial = num;
+		 let b = num;
+		 for(let a = 1 ; a < b ; a++)
+		 {
+			 console.log("num", num);
+			 console.log("a", a);
+			 num = num - 1;
+			 console.log("num - 1 =", num);
+			 result_of_factorial = result_of_factorial * num;
+			 console.log("result_of_factorial", result_of_factorial, num, a);
+		 }
+		 return result_of_factorial;
+		 
+	 }
 
-// Error is :Uncaught SyntaxError: Unexpected token else
+	 //input num ;
+	 let num = prompt("Enter Number for Factorial:");
 
-
-//Correct Statment
-	var greeting; 
-	var hour = 13;
-
-	if (hour < 18)
-	{ 
-		greeting = "Good day"; 
-	}
-	else 
-	{
-		greeting = "Good evening"; 
-	}
-	alert(greeting);
-
-//        OR
-
-//Correct Statment 2
-	var greeting; 
-	var hour = 13;
-
-	if (hour < 18)
-		greeting = "Good day"; 
-	else 
-	{
-		greeting = "Good evening"; 
-	}
-	alert(greeting);
-}
-function ques7(){
-	//     Write a program that takes time as input from user in 24
-	// hours clock format like: 1900 = 7pm. Implement the
-	// following case using if, else & else if statements
-
-	//  input time-------  in 24hrs
-	var time = +prompt("Enter Time in 24 hours Format:")
-
-	
-	//Check wether the user enter time
-	if(time != null)
-	{	
-		// Check time value
-		if ( ( time >= 0000 ) && ( time <= 2359 ) )
-		{
-
-			alert("Your Input Time Format is Correct.")
-
-			// Good Morning!
-			if ( ( time >= 0000 ) && ( time < 1200 ) )
-			{
-				console.log("“Good Morning!”");
-
-				alert("“Good Morning!”");
-				
-			}
-			// Good Afternoon!
-			else if ( ( time >= 1200 ) && ( time < 1700 ) )
-			{
-				console.log("“Good Afternoon!”");
-
-				alert("“Good Afternoon!");
-				
-			}
-			// Good Evening!
-			else if ( ( time >= 1700 ) && ( time < 2100 ) )
-			{
-				console.log("“Good Evening!”");
-
-				alert("“Good Evening!");
-				
-			}
-			// Good Night!
-			else if ( ( time >= 2100 ) && ( time <= 2359 ) )
-			{
-				console.log("“Good Night!”");
-
-				alert("“Good Night!");
-				
-			}	
-
-		}
-		// time value is false
-		else 
-		{
-
-			alert("Invalid Time!");
-		}
-	}
-	else
-	{
-		//cancel the prompt not enter time
-		alert("You didn't Enter Time.");
-	}
-
+	 if( num != null)
+	 {
+		 let factorial = fun_factorial(+num);
+		 document.write("<h4>Factorial: </h4>");
+		 document.write("input Number = " + +num);
+		 document.write("<br>After Factorial = " + factorial);
+	 }
+	 else
+	 {
+		 alert("You Quit Session.")
+	 }
 }
 function ques8(){
 	
