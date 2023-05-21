@@ -432,81 +432,84 @@ function ques5(){
 }
 
 function ques6(){
-        // 6. Generate the following series in your browser. See
-        //     example output.
-        //     a. Counting: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-        //     b. Reverse counting: 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
-        //     c. Even: 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20
-        //     d. Odd: 1, 3, 5, 7, 9, 11, 13, 15, 17, 19
-        //      12k, 14k, 16k, 18k, 20k
+        // 6.   Write a function to delete all vowels from a sentence. Assume
+        //      that the sentence is not more than 25 characters long.
+   
 
-        // declare
-        var even, odd;
+        let pattern = /[a|e|i|o|u]/g;
+        let vowel = [ "a" , "e" , "i" , "o" , "u" ];
 
-
-        counting = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-
-
-
-        document.write("<h4>Generate Series:</h4>");
-        
-        // Display Counting 
-        document.write("<h4>Counting: </h4>");
-        for(var a = 1 ; a <= 15 ; a++)
+        function fun_delete_vowel( lower_input , vowel )
         {
-            document.write(a + ",");
-        }
-        document.write("<br><br>");
 
-        // Display Reverse Counting 
-        document.write("<h4>Reverse Counting: </h4>");
-        for(var b = 10 ; b > 0 ; b--)
-        {
-            document.write(b + ",");
-        }
-        document.write("<br><br>");
-
-        // Display Even 
-        document.write("<h4>Even: </h4>");
-        
-        for(var b = 0 ; b <= 20 ; b++)
-        {
-            if( ( b%2 ) == 0 )
+            let word_to_character = lower_input.split("");
+            console.log(word_to_character);
+            
+            for(let a = 0 ; a < word_to_character.length ; a++)
             {
-                even = b;
-                console.log(even);
-                document.write(even + ",");
-            }
+                console.log( word_to_character[a] , a );
                 
+                let work_check = pattern.test(word_to_character[a]);
+
+                for( let b = 0 ; b < vowel.length ; b++)
+                {
+                    if( word_to_character[a] == vowel[b] )
+                    {
+                        console.log(true);
+                        console.log( word_to_character[a] , a );
+                        
+                        let delete_after = word_to_character.splice(a , 1);
+    
+                        console.log( delete_after , a );
+    
+                    }
+
+                }
+
+            }
+
+            console.log( word_to_character.join("") );
+            return word_to_character.join("");
+           
         }
 
-        document.write("<br><br>");
 
-        // Display Odd 
-         document.write("<h4>Odd: </h4>");
-        for(var b = 0 ; b <= 20 ; b++)
+        alert("Delete All the Vowels from a Sentence\nMax Length is 25 characters long")
+
+        let input = prompt("Enter Content:");
+        console.log( input );
+        console.log( input.length );
+
+        let lower_input = input.toLowerCase();
+
+        if( input != null && input.length <= 25 ) 
         {
-            if( ( b%2 ) !== 0 )
+            
+            // Write a function that
+            let check_input = pattern.test(lower_input);
+            console.log(check_input);
+            
+            if( check_input == true ) 
             {
-                odd = b;
-                console.log(odd);
-                document.write(odd + ",");
-            }
-                
-        }
+                let display_delete_after = fun_delete_vowel( lower_input , vowel );
+                console.log( display_delete_after );
 
-        // Display Series 
-        document.write("<h4>Series: </h4>");
-        for(var b = 2 ; b <= 20 ; b+=2)
-        {
-            if( ( b%2 ) == 0 )
-            {
-                even = b;
-                console.log(even);
-                document.write(even + "k,");
-            }
+                document.write("<h4>Delete All Vowel From Input:</h4>");
                 
-        }
+                document.write("<br>input: <b>" + input + "</b>");
+                document.write("<br>After delete all vowel:  " + display_delete_after);
+
+            }   
+            else
+            {
+                alert("Vowels not Found in Your Content\nQuit Session.");
+            }
+
+        }   
+        else
+        {
+            alert("Your didn't enter input \nQuit Session.");
+        } 
 }
 
 function ques7(){
