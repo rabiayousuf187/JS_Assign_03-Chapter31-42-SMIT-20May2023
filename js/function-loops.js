@@ -641,34 +641,90 @@ function ques7(){
 }
 
 function ques8(){
-        // 8. Write a program to identify the largest number in the
-        // given array.
-        // A = [ 24 , 53 , 78 , 91 , 12 ].
-
-        // declare
-        var num, large_num = 0;  
+        // 8. The distance between two cities (in km.) is distance through the
+        // keyboard. Write four functions to convert and print this
+        // distance in meters, feet, inches and centimeters
 
 
-       num = [ 24 , 53 , 78 , 91 , 12 ];
-       
-        for(var a = 0; a < num.length ; a++)
+        function convert_distance( distance )
         {
+            
+            document.write("<h4>Convert Distance in KM to :</h4>");
 
-            if( large_num < num[a])
-            {
-                console.log(num[a]);
-                large_num = num[a];
-                console.log("num[a]" ,  num[a]);
-                
-            }
+            let dis_meter = cal_meter( distance );
+            console.log( dis_meter );
 
+            let dis_feet = cal_feet( distance );
+            console.log( dis_feet );
 
+            let dis_inches = cal_inches( distance );
+            console.log( dis_inches );
+
+            let dis_centimeter = cal_centimeter( distance );
+            console.log( dis_centimeter );
+
+           
         }
-        console.log("large_num" , large_num);
-        document.write("<h4>Largest Number in Array:</h4><br>");
-        document.write("Array items: 24 , 53 , 78 , 91 , 12 <br><br>");
-        document.write("The Largest Number is " + large_num);
-       
+
+// in meter
+        function cal_meter( distance )
+        {
+            
+            let meter = distance / 1000;
+
+            document.write("<br><br><b>distance in meters:</b>");
+            document.write("<br>distance in meters = " + meter + "m");
+        }
+
+// in feet
+        function cal_feet( distance )
+        {
+            // formula in feet
+            let feet = distance * 3280.8;
+
+            document.write("<br><br><b>distance in feet:</b>");
+            document.write("distance in feet = " + feet + "feet");
+        }
+
+
+// in inches
+        function cal_inches( distance )
+        {
+            // formula in inches 1 feet  = km * 3280.8
+            // inches = 12 * feet
+            let inches = 12 * ( distance * 3280.8 );
+
+            document.write("<br><br><b>distance in inches:</b>");
+            document.write("<br>distance in inches = " + inches + "inches");
+        }
+
+// in centimeter
+        function cal_centimeter( distance )
+        {
+            // formula in inches 1 feet  = km * 3280.8
+            // inches = 12 * feet
+            // cm = in / 0.39370
+            let centimeter = ( 12 * ( distance * 3280.8 ) ) / 0.39370;
+
+            document.write("<br><br><b>distance in centimeters:</b>");
+            document.write("<br>distance in centimeter = " + centimeter + "cm");
+        }
+
+        alert("distance distance between two cities (in km.), I will Return distance\ne.g: 20km, 20KM\n\n1. in meters\n2. feet\n3. inches\n4. centimeters");
+
+        let distance = prompt("Enter Distance:");
+        console.log( distance );
+
+        if( distance != null ) 
+        {
+            distance = parseFloat(distance);
+            let display_convert_distance = convert_distance( distance );
+            
+        }
+        else
+        {
+            alert("Your didn't enter distance \nQuit Session.");
+        } 
 }
 
 function ques9(){
