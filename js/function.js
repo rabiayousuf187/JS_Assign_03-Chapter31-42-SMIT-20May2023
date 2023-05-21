@@ -430,8 +430,81 @@ function ques9(){
             alert("You Quit Session.")
         }
 }
-function ques8(){
-	
+function ques10(){
+	// 10. Write a JavaScript function that checks whether a passed
+        // string is palindrome or not?
+        // A palindrome is word, phrase, or sequence that reads the same backward as
+        // forward, e.g., madam.
+                
+
+        function fun_palindrome(palindrome)
+        {
+            let length = palindrome.length;
+            let half_str = length / 2;
+            console.log(half_str);
+            
+            let half_length = Math.floor(half_str);
+            console.log(half_length);
+
+
+            var start_str = palindrome.slice(0 , half_length);
+            var end_str = palindrome.slice(half_length + 1 , length);
+            console.log(start_str);
+            console.log(end_str);
+
+            let reverse_end_str = end_str.split("");
+            let new_rev_end_str = [];
+
+            for( let a = 0 ; a < end_str.length ; a++ )
+            {
+                console.log(reverse_end_str[a]);
+                new_rev_end_str[a] = reverse_end_str[ --half_length ];
+                console.log("replace ", new_rev_end_str[a]);
+            }
+
+            // array to String
+            console.log(new_rev_end_str);
+            new_rev_end_str = new_rev_end_str.join(""); 
+            console.log(new_rev_end_str);
+            
+            
+            if( start_str === new_rev_end_str )
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+
+
+        let palindrome = prompt("Enter Word to Check Palindrome:\ne.g: madam");
+
+        if( palindrome != null)
+        {
+            
+            document.write("<h4>Check Palindrome:</h4>");
+            document.write("Input String: " + palindrome);
+            
+            palindrome = palindrome.toLowerCase();
+            let check_palind = fun_palindrome(palindrome);
+
+            if(check_palind == true)
+            {
+                document.write("<br>Your Input is Palindrome.");
+            }
+            else
+            {
+                document.write("<br>Your Input is not a Palindrome.");
+            }
+
+        }
+        else
+        {
+            alert("You Quit Session.")
+        }
 }
 function ques8(){
 	
