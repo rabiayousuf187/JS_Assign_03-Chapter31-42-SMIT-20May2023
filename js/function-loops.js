@@ -513,49 +513,131 @@ function ques6(){
 }
 
 function ques7(){
-       // 7. You have an array
-    // A = [“cake”, “apple pie”, “cookie”, “chips”, “patties”]
-    // Write a program to enable “search by user input” in an
-    // array.
-    // After searching, prompt the user whether the given item is
-    // found in the list or not. 
+      // 7.   Write a function with switch statement to count the number of 
+        //      occurrences of any two vowels in succession in a line of text. 
+        
+        //      For example, in the sentence
 
-        // declare
-        var  bakert_items,
-        search_input,
-        pos_search_input;
+                // “Pleases read this application and give me gratuity”
 
+        
+            // Such occurrences are ea, ea, ui.
 
-        bakert_items = [ "cake" ,  "apple pie",  "cookie" ,  "chips" ,  "patties" ];
-
-
-        search_input = prompt("Welcome to My Bakery. What do you want to order sir/ma'am?\ncake , apple pie ,  cookie ,  chips ,  patties")
-        search_input = search_input.toLowerCase();
-        if (search_input != null)
-        {
-            // Index of match Item
-            pos_search_input = bakert_items.indexOf(search_input);
-            // index of match in array
-            // if match posi... is >= 0
-            // if not match posi... is = -1
-            console.log(pos_search_input);
-            if ( pos_search_input >= 0 )
+            let pattern = /[a|e|i|o|u]/g;
+            let vowel = [ "a" , "e" , "i" , "o" , "u" ];
+    
+            let vowel_pair_result = [];
+            
+            let pair_letter_split_check_1;
+            let pair_letter_split_check_2;
+    
+            let count = 0;
+    
+            function fun_pair_vowel( lower_input , input , vowel )
             {
-                alert(search_input + " is avaliable at index " + pos_search_input + " in our Bakery.");
-                document.write(search_input + " is <b>avaliable</b> at index " + pos_search_input + " in our Bakery.");
+                
+                document.write("<h4>Show Pair Vowels From Content:</h4>");
+                
+                document.write("<br>input: <b>" + input + "</b>");
+                
+                for(let a = 0 ; a < lower_input.length ; a++)
+                {
+                    // 2 letters split for 2 vowels
+                    let pair_letter = lower_input.slice( a , a + 2 );           
+                    console.log( pair_letter , a );
+                    
+    
+                    //split into two letters
+                    let pair_letter_split = pair_letter.split("");           
+                    console.log( pair_letter_split , a );
+    
+                    // pair_letter_split_check_1 = pattern.test(pair_letter_split[0]);
+                    // pair_letter_split_check_2 = pattern.test(pair_letter_split[1]);
+                    // console.log( pair_letter_split_check_1 , pair_letter_split_check_2 );
+    
+                    // pair_letter_split_check_1 = pair_letter_split[0].match(pattern);
+                    // console.log( pair_letter_split_check_1 , pair_letter_split_check_2 );
+                    
+    
+                    switch(pair_letter_split[0])
+                    {
+                        case 'a':
+                        case 'e':
+                        case 'i':
+                        case 'o':
+                        case 'u':
+    
+                        pair_letter_split_check_2 = pair_letter_split[1].match(pattern);
+                        console.log( pair_letter_split_check_2 );
+                        
+                        
+                        if( pair_letter_split_check_2 != null )
+                        {
+                            console.log( pair_letter_split , a );
+    
+                            var result = vowel_pair_result.push(pair_letter); 
+                            console.log( vowel_pair_result );
+                            console.log( result );
+    
+                            count++;
+                            console.log(count);
+                        }
+                    }
+                        
+                        
+                    // if( pair_letter_split_check_1 != null && pair_letter_split_check_2 != null )
+                    // {
+                        
+                    //     console.log( pair_letter_split , a );
+    
+                    //     var result = vowel_pair_result.push(pair_letter); 
+                    //     console.log( vowel_pair_result );
+                    //     console.log( result );
+    
+                    //     count++;
+    
+                    // }
+    
+    
+                }
+    
+                document.write("<br>Such occurrences are  <b>" + vowel_pair_result + "</b>");
+                document.write("<br>Total number of occurrences:<b>" + count + "</b>");
+               
             }
-            // if not match posi... is = -1
+    
+    
+            alert("Fetch Vowels Pairs from a Sentence");
+    
+            let input = prompt("Enter Content:");
+            console.log( input );
+            console.log( input.length );
+    
+            let lower_input = input.toLowerCase();
+    
+            if( input != null ) 
+            {
+                
+                // Write a function that
+                let check_input = pattern.test(lower_input);
+                console.log(check_input);
+                
+                if( check_input == true ) 
+                {
+                    let display_pair_vowels = fun_pair_vowel( lower_input , input , vowel );
+                    console.log( display_pair_vowels );
+    
+                }   
+                else
+                {
+                    alert("Vowels not Found in Your Content\nQuit Session.");
+                }
+    
+            }   
             else
             {
-                alert("We are sorry. " + search_input + " is not avaliable in our Bakery.");
-                document.write("We are sorry. " + search_input + " is <b>not avaliable</b> in our Bakery.");
-            }
-        }
-        else
-        {
-            alert("You Quit session.")
-        }
-    
+                alert("Your didn't enter input \nQuit Session.");
+            } 
 }
 
 function ques8(){
