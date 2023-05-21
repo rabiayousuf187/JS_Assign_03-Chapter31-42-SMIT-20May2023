@@ -71,47 +71,83 @@ function ques3(){
         }
 }
 function ques4(){
-	// Write a program that takes a character (i.e. string of
-	// 	length 1) and returns true if it is a vowel, false otherwise   
-	
-	// Enter any Character(number or string) 
-	alert("Enter One Character:\nTo Check Vowel or Consonant");
+	//    4. Calculator:
+    //   Write a function that takes three arguments num1, num2
+    //   & operator & compute the desired operation. Return and
+    //   show the desired result in your browser.
 
-	// first_number 
-	var char = prompt("Enter Only One Character:")
-
-	//Check wether you cancel the prompt or not
-	if (char == null){
-		alert("You didn't Enter the Character\nThis section is terminated\nRestart Again!");
+	function fun_calculation(first_num , second_num , operator)
+	{
+		if( operator == "*")
+		{
+			let cal  = first_num * second_num;
+			return cal;
+		}
+		else if( operator == "+")
+		{
+			let cal  = first_num + second_num;
+			return cal;
+		}
+		else if( operator == "-")
+		{
+			let cal  = first_num - second_num;
+			return cal;
+		}
+		else if( operator == "/")
+		{
+			let cal  = first_num / second_num;
+			return cal;
+		}
+		else if( operator == "%")
+		{
+			let cal  = first_num % second_num;
+			return cal;
+		}
+		else
+		{   
+			let cal  = first_num + second_num;
+			return cal;
+		}
 	}
-	else {
 
-			if (char == "a" || char == "A" || char == "e" || char == "E" || 
-				char == "i" || char == "I" || char == "o" || char == "O" || 
-				char == "u" || char == "U")
+	//input first_num ;
+	let first_num = prompt("Enter First Num:");
+
+	if( first_num != null)
+	{
+		//input second_num;
+		let second_num = prompt("Enter Second Num:");
+
+		if( second_num != null)
+		{
+			//input second_num;
+			let operator= prompt("Enter operator:\nDefault = +", "+");
+			if( operator != null)
 			{
-				document.write("<h4>Vowel:</h4>");
-				document.write("True, Your character " + char + " is Vowel.");
-			}
-			else if (+char == 1 || +char == 2 || +char == 3 || +char == 4 || 
-				+char == 5 || +char == 6 || +char == 7 || +char == 8 || 
-				+char == 9 || +char == 0)
-			
-			{
-				//Successfully Enter Both Values
-				document.write("<h4>Wrong Input!<h4><br>");
-				document.write("You Enter a Number " + char + "not a string or character. ");
+				let calculate = fun_calculation( +first_num , +second_num , operator);
+				console.log("calculate", calculate);
+				document.write("<h4>Calculator:</h4>");
+				document.write("First Number = " + +first_num);
+				document.write("<br>Second Number = " + +second_num);
+				document.write("<br>Operator = " + operator + "<br><br>");
+				document.write("<h4>Calculated Result:</h4>" + +first_num + " "+ operator  + " "+ +second_num + " = " + calculate);
 
 			}
 			else
 			{
-
-				document.write("<h4>Consonant or Special Character:</h4>");
-				document.write("False, Your character " + char + " is a Consonant or Other Special Character.");
+				alert("You didn't Enter operator\nSession Quit.")
 			}
-			
+	   
+		}
+		else
+		{
+			alert("You didn't Enter Second Number\nSession Quit.")
+		}
 	}
-
+	else
+	{
+		alert("You Quit Session.")
+	}
 }
 function ques5(){
 	// Write a program that
