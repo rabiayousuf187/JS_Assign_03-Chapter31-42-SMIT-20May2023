@@ -506,8 +506,92 @@ function ques10(){
             alert("You Quit Session.")
         }
 }
-function ques8(){
+function ques11(){
 	
+        // 11. Write a JavaScript function that accepts a string as a
+        //     parameter and converts the first letter of each word of the
+        //     string in upper case.
+        //     EXAMPLE STRING : 'the quick brown fox'
+        //     EXPECTED OUTPUT : 'The Quick Brown Fox'
+
+
+        let input_arr = new Array (),
+        letter_arr = new Array (),
+        upper_letter_arr = new Array (),
+        remain_small_arr = new Array (),
+        reult_in_text_transform = new Array (),
+        text_transform = new Array();
+
+
+        function fun_convert_case(input)
+        {
+
+            input_arr = input.split(" ");
+            console.log("Number of words in Input " , input_arr[i]);                 // Array nth 1st letter Display
+
+            for(var i = 0; i < input_arr.length ; i++)
+            {
+
+                    
+                    letter_arr[i] = input_arr[i].split("");
+                    console.log("input_arr " + i + " word ", input_arr[i]);                 // Array nth 1st letter Display
+                    console.log("letter_arr[i] ", letter_arr[i]);
+                    console.log("letter_arr[0] ", letter_arr[i][0]);
+
+                    // Arr Word 1st Letter In Upper Case
+                    upper_letter_arr[i] = letter_arr[i][0].toUpperCase();
+                    console.log("input_arr " + i + " " + input_arr[i] + " 1st letter in Upper Case", upper_letter_arr[i] );
+
+                    // Arr Word remain Letters In Lower Case
+                    remain_small_arr[i] = input_arr[i].substr(1);              // Array nth remain letter Display
+                    remain_small_arr[i] = remain_small_arr[i].toLowerCase();              // Array nth remain letter in Lower Case
+                    console.log(remain_small_arr[i]);                              // Array nth remain letter Display in Lower Case
+            
+                    text_transform[i] = upper_letter_arr[i]  + remain_small_arr[i];    // Combine 1st Upper Case and Last remain letter
+                    console.log("letter_arr[i] " + upper_letter_arr[i] );
+                    console.log("remain_small_arr[i] " + remain_small_arr[i]);
+                    console.log("input_arr " + i + " word  " + input_arr[i]);
+                    
+                    reult_in_text_transform = text_transform.join(" ");
+                    
+                    if( i  == (input_arr.length-1) )
+                    {
+                            console.log("Text has been transfrom Successfully.");
+                            console.log("Your Input Text was ",input);
+                            console.log("After Text Transform:");
+                            console.log("Transformed Text is ",reult_in_text_transform);
+                            break;
+                    }
+
+        
+            }
+
+
+            return reult_in_text_transform;
+
+        }
+
+        // Input // profeSSor aLi nAqvi is a gReaT cOMputer sciEntIST.
+    let input = prompt("Enter Your Text:\nTo Transform Text in Capitalize Format\ne.g: Hello World!");
+    console.log(input);
+
+    if( input != null )
+    {
+        let transform_case = fun_convert_case(input);
+
+        alert("Text has been transfrom Successfully.");
+        document.write("<h4>Text Transfrom:</h4>");
+        document.write("<br>Input Text: ", input);
+        document.write("<br><br>After Text Transform:");
+        document.write("<br>" + transform_case);
+                            
+    }
+    else
+    {
+        alert("You Quit Session.");
+    } 
+
+
 }
 function ques8(){
 	
