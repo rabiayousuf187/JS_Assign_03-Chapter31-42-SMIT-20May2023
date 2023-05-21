@@ -210,6 +210,102 @@ function ques6(){
 		 alert("You Quit Session.")
 	 }
 }
+function ques7(){
+	// 7. Write a function that take start and end number as inputs
+        //     & display counting in your browser.
+
+        let count_arr = [];
+        let count= [];
+        
+        let a;
+
+        function fun_counting(start_num , end_num)
+        {
+            a = start_num;
+            if(start_num < end_num)
+            {
+                
+                let mid_vals = ( end_num - start_num) + 1;
+                for( a = 0 ; a < mid_vals ; a++ )
+                {
+                    console.log( "a = ", a , "(count_arr[a])" , count_arr[a] );
+                    count_arr[a] = start_num;
+                    console.log( " after (count_arr[a])" , count_arr[a] );
+
+                    start_num++;
+                }
+               
+                return count_arr;
+            }
+
+            else if(start_num > end_num)
+            {
+                
+                let mid_vals = ( start_num - end_num) + 1;
+                for( a = 0 ; a < mid_vals ; a++ )
+                {
+                    console.log( "a = ", a , "(count_arr[a])" , count_arr[a] );
+                    count_arr[a] = start_num;
+                    console.log( " after (count_arr[a])" , count_arr[a] );
+
+                    start_num--;
+                }
+               
+                return count_arr;
+            }
+            else 
+            {
+                return count_arr = false;
+            }
+            
+            
+
+        }
+
+        //input start_num ;
+        let start_num = prompt("Enter start Num:");
+
+        if( start_num != null)
+        {
+            //input end_num;
+            let end_num = prompt("Enter end Num:");
+
+            if( end_num != null)
+            {
+                count = fun_counting( +start_num , +end_num);
+                console.log(typeof count);
+                // document.write(count);
+
+                console.log(start_num , end_num);
+                document.write("<h4>Counting:</h4>");
+                document.write("Start Number = " + +start_num);
+                document.write("<br>End Number = " + +end_num + "<br><br>");
+        
+
+                if( count )
+                {
+                    for(var index = 0 ; index < count.length ; index++)
+                    {
+                        document.write("<br>count = " + count[index] + "<br>");
+                    }
+                }
+                else
+                {
+                    document.write("<br>Counting is Invalid<br>because start number " + start_num + " and end number " + end_num + " are same.<br>");
+                }
+
+            }
+            else
+            {
+                alert("You didn't Enter End Number\nSession Quit.")
+            }
+        }
+        else
+        {
+            alert("You Quit Session.")
+        }
+
+}
 function ques8(){
 	
 }
