@@ -203,10 +203,10 @@ function ques3(){
                 {
                     area_of_triangle = cal_area_of_triangle( +length_a , +length_b , +length_c  );
                     
+                    console.log( area_of_triangle);
                     if( area_of_triangle )
                     {
                         
-
                         document.write("<h4>Calculate Area of 3 Sided Triangle::</h4>");
                         
                         document.write("<br>length side a = <b>" + +length_a + "</b>");
