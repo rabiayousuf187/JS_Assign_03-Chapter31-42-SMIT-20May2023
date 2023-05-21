@@ -374,8 +374,61 @@ function ques8(){
         }
 
 }
-function ques8(){
-	
+function ques9(){
+	// 9. Write a function that calculates the area of a rectangle.
+        // A = width * height
+        // Pass width and height in following manner:
+        // i. Arguments as value (hard coded)
+        // ii. Arguments as variables (User input)
+
+
+        function calculate_area_of_rect(width , height)
+        {
+            let area_of_rect = width + height;
+            return area_of_rect;
+        }
+
+        //input width ;
+        let width = prompt("Enter width:");
+
+        if( width != null)
+        {
+            //input height;
+            let height = prompt("Enter  height:");
+
+            if( height != null)
+            {
+                //User Input
+                let user_inp_area_of_rect = calculate_area_of_rect( +width , +height);
+
+                console.log(width , height)
+                document.write("<h4>Calculate Area of Rectangle:<br>Using User Input</h4>");
+                document.write("width = " + +width);
+                document.write("<br>height = " + +height);
+                document.write("<br>Area of Rectangle = " + user_inp_area_of_rect);
+                
+                //hard coded input
+                width = 5;
+                height = 12;
+                
+                user_inp_area_of_rect = calculate_area_of_rect( width , height);
+
+                console.log(width , height)
+                document.write("<h4>Calculate Area of Rectangle:<br>Assign Values</h4>");
+                document.write("width = " + width);
+                document.write("<br>height = " + height);
+                document.write("<br>Area of Rectangle = " + user_inp_area_of_rect);
+                
+            }
+            else
+            {
+                alert("You didn't Enter height\nSession Quit.")
+            }
+        }
+        else
+        {
+            alert("You Quit Session.")
+        }
 }
 function ques8(){
 	
