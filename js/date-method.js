@@ -120,28 +120,14 @@ function ques7() {
 }
 
 function ques8() {
-  //     Write a program to check whether the given number is
-  // divisible by 3. Show the message to the user if the number
-  // is divisible by 3.
+    // Write a program that creates a Date object for the last day
+    // of the last month of 2020 and assigns it to variable named
+    // laterDate.
 
-  var input_num, result;
-
-  // Then Inpu a guess no from user
-  input_num = +prompt(
-    "Input a Number, I will confirm \n Your number is divisable by 3:"
-  );
-
-  result = input_num % 3;
-
-  if (result == 0) {
-    document.write("Your given number " + input_num + " is divisable by 3.");
-  } else if (result !== 0) {
-    document.write(
-      "Your given number " + input_num + " is not divisable by 3."
-    );
-  } else {
-    alert("You didn't answer.");
-  }
+    let laterDate = new Date('Dec 31, 2020' );
+    
+    alert(`Later Date: ${laterDate} `);
+  
 }
 
 function ques9() {
