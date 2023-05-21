@@ -306,6 +306,86 @@ function ques7(){
         }
 
 }
+
+function ques8(){
+	
+        // 8. Write a nested function that computes hypotenuse of a
+        //     right angle triangle.
+        //     Hypotenuse2 = Base2 + Perpendicular2
+
+        // Take base and perpendicular as inputs.
+        // Outer function : calculateHypotenuse()
+        // Inner function: calculateSquare()
+
+        let sqr_num;
+
+        function calculateHypotenuse(base , perp)
+        {
+            let base_sqr = calculateSquare(base);
+            console.log("base_sqr" , base_sqr);
+
+            let perp_sqr = calculateSquare(perp);
+            console.log("perp_sqr" , perp_sqr);
+
+            let hyp = base_sqr + perp_sqr;
+            console.log("hyp" , hyp);
+
+            let hyp_sqr = calculateSquare(hyp);
+            console.log("hyp_sqr" , hyp_sqr);
+
+            return hyp_sqr;
+
+        }
+
+        function  calculateSquare(sqr_num)
+        {
+            let after_sqr = Math.pow(sqr_num , 2);
+            console.log("after_sqr" , after_sqr);
+            return  after_sqr;
+
+        }
+        //input base ;
+        let base = prompt("Enter Base:");
+
+        if( base != null)
+        {
+            //input perp;
+            let perp = prompt("Enter  Perpendicular:");
+
+            if( perp != null)
+            {
+                let hyp = calculateHypotenuse( +base , +perp);
+                // document.write(count);
+                console.log(base , perp)
+                document.write("<h4>Calculate Hypotenuse of a Right Angle Triangle:</h4>");
+                document.write("Base = " + +base);
+                document.write("<br>Perpendicular = " + +perp);
+                document.write("<br>Hypotenuse = " + hyp);
+                
+            }
+            else
+            {
+                alert("You didn't Enter End Number\nSession Quit.")
+            }
+        }
+        else
+        {
+            alert("You Quit Session.")
+        }
+
+}
+function ques8(){
+	
+}
+function ques8(){
+	
+}
+function ques8(){
+	
+}
+function ques8(){
+	
+}
 function ques8(){
 	
 }
