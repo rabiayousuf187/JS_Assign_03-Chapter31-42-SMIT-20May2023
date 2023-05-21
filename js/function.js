@@ -593,6 +593,68 @@ function ques11(){
 
 
 }
+function ques12(){
+	
+        // 12. Write a JavaScript function that accepts a string as a
+        //     parameter and find the longest word within the string.
+        //     EXAMPLE STRING : 'Web Development Tutorial'
+
+
+        let input_arr = new Array ();
+        let long_word_num = 0,
+            long_word;
+
+        function fun_longest_word(input)
+        {
+
+            input_arr = input.split(" ");
+            console.log("Number of words in Input " , input_arr.length);                 // Array nth 1st letter Display
+
+            for(let i = 0; i < input_arr.length ; i++)
+            {
+
+                    if(long_word_num < input_arr[i].length)
+                    {
+                        long_word_num = input_arr[i].length;
+                        long_word = input_arr[i];
+                        console.log("long_word" , long_word , input_arr[i].length )
+                    }
+                    
+                    if( i  == (input_arr.length-1) )
+                    {
+                            console.log("Input: " , input);
+                            console.log("Longest Word: ", long_word);
+                            break;
+                    }
+
+        
+            }
+
+
+            return long_word;
+
+        }
+
+        // Input // profeSSor aLi nAqvi is a gReaT cOMputer sciEntIST.
+    let input = prompt("Enter Your Text:\nTo Find Longest Word in the Content");
+    console.log(input);
+
+    if( input != null )
+    {
+        long_word = fun_longest_word(input);
+
+        document.write("<h4>Find Longest Word:</h4>");
+        document.write("<br>Input: ", input);
+        document.write("<br>Longest Word: " + long_word);
+                            
+    }
+    else
+    {
+        alert("You Quit Session.");
+    } 
+
+
+}
 function ques8(){
 	
 }
