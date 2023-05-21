@@ -1,148 +1,74 @@
 function ques1(){
-        //         Write a program that takes a character (number or string)
-        // in a variable & checks whether the given input is a
-        // number, uppercase letter or lower case letter. (Hint: ASCII
-        // codes:- A=65, Z=90, a=97, z=122).
-        
-     // Enter any Character(number or string) 
-	var input = prompt("Enter any Character(number or string):\nTo Check given input is a number, uppercase letter or lower case letter:");
+	// . Write a function that displays current date & time in your
+	// browser
+	
+	function display_current_date()
+        {
+            let current_date_time  = new Date();
+            return current_date_time;
+        }
 
-	//Check wether the user cancel the Prompt or not
-	if(input != null)
-	{	
-		//ASCII CODE 
-		var A = 65, Z = 90, a = 97, z = 122; 
-
-		var in_con_accii = input.charCodeAt(0);
-		console.log(in_con_accii);
-
-		// FOR NUMBER
-		if ( +input === 1 || +input === 2 || +input === 3 || +input === 4 || +input === 5 || 
-		+input === 6 || +input === 7 || +input === 8 || +input === 9 || +input === 0 )
-		{
-			console.log( input + " Number");
-			document.write("<h4>Number:</h4>");
-			document.write("The given input " + "<b>" + input + "</b>" + " is a number.");
-		}
-		// FOR CAPITAL LETTER
-		else if ( ( in_con_accii >= A ) && ( in_con_accii <= Z ) )
-		{
-			console.log( input + " Capital Letter");
-			document.write("<h4>Capital Letter:</h4>");
-			document.write("The given input " + "<b>" + input + "</b>" + " is Capital Letter, which ASCII Code is " + in_con_accii + ".");
-		}
-		// FOR SMALL LETTER
-		else if ( ( in_con_accii >= a ) && ( in_con_accii <= z ) )
-		{
-			console.log( input + "Small Letter");
-			document.write("<h4>Small Letter:</h4>");
-			document.write("The given input " + "<b>" + input + "</b>" + " is a Small Letter, which ASCII Code is " + in_con_accii + ".");
-		}
-		// FOR OTHERs
-		else
-		{
-			alert("Invalid Input:\nYou didn't Enter any letter or number.");
-		}
-	}
-	else
-	{
-		//cancel the prompt
-		alert("You didn't answer.");
-	}
+        //
+        let display_date_time = display_current_date();
+        document.write(display_date_time);
 }
 
 function ques2(){
+ // 2. Write a function that takes first & last name and then it
+        // greets the user using his full name.
+		console.log("ok;");
+        function username(first_name , last_name)
+        {
+            let full_name  = first_name.concat(" ", last_name);
+            return full_name;
+        }
 
-        //         Write a JavaScript program that accept two integers and
-        // display the larger. Also show if the two integers are equal.
+        //input first_name & last_name;
+        let first_name = prompt("Enter First Name:");
+        let last_name = prompt("Enter Last Name:");
 
-     // Enter any Character(number or string) 
-	alert("Enter Two Numbers:\nCheck Which one is Greater Smaller Or Equal to each other:");
-
-	// first_number 
-	var first_number = prompt("Enter First Number:")
-
-	//Check wether you cancel the prompt or not
-	if (first_number == null){
-		alert("You didn't Enter the First Number\nThis section is terminated\nRestart Again!");
-	}
-	else {
-
-			var second_number = prompt("Enter Second Number:")
-
-			//Check wether you cancel the prompt or not
-			if (second_number == null){
-				alert("You didn't Enter the Second Number\nThis section is terminated\nRestart Again!");
-			}
-		else{
-				//Successfully Enter Both Values
-				alert("You have Successfully Enter Both Values.");
-
-				//Greater
-				if (+first_number > +second_number){
-
-					document.write("Greater:<br>");
-					document.write("First Number " + +first_number + " is greater than Second Number " + +second_number + ".");
-				}
-				//Smaller
-				else if (+first_number < +second_number){
-
-					document.write("Smaller:<br>");
-					document.write("First Number " + +first_number + " is smaller than Second Number " + +second_number + ".");
-				}
-				// Equal
-				else if (+first_number == +second_number){
-
-					document.write("Equal:<br>");
-					document.write("First Number " + +first_number + " is Equal to Second Number " + +second_number + ".");
-				}
-			}
-	}
+        let greet_user = username( first_name , last_name);
+        alert("Hello " + greet_user + "!\nWelcome to Web design and development Portal");
+        
 }
-
 function ques3(){
-	// Write a program that takes input a number from user &
-	// state whether the number is positive, negative or zero.
-	
-	// Enter any number 
-	alert("Enter a Numbers:\nTo Check wether the number is Positive Negative or Zero:");
 
-	// number 
-	var number = prompt("Enter a Number:")
-	console.log(number);
-	//Check wether you cancel the prompt or not
-	if (number == null){
-		alert("You didn't Enter the Number\nThis section is terminated\nRestart Again!");
-	}
-	else {
+	 // 3. Write a function that adds two numbers (input by user)
+        // and returns the sum of two numbers.
 
-			// Positive number
-			if (+number > 0){
+        function sum_of_num(first_num , second_num)
+        {
+            let sum  = first_num + second_num;
+            return sum;
+        }
 
-				document.write("<h4>Number State:</h4>");
-				document.write("The Number " + +number + " is Positive.");
-			}
-			//Negative
-			else if (+number < 0){
+        //input first_num ;
+        let first_num = prompt("Enter First Num:");
 
-				document.write("<h4>Number State:</h4>");
-				document.write("The Number " + +number + " is Negative.");
-			}
-			// Zero
-			else if (+number == 0){
+        if( first_num != null)
+        {
+            //input second_num;
+            let second_num = prompt("Enter Second Num:");
 
-				document.write("<h4>Number State:</h4>");
-				document.write("The Number " + +number + " is Zero.");
-			}
-			// For other input
-			else{
-				document.write("<h4>Error:</h4><br>");
-				document.write("Your Input is Invalid.<br>Enter a Valid Number.");
-			}
-	}
-	
+            if( second_num != null)
+            {
+              
+                let sum = sum_of_num( +first_num , +second_num);
+                document.write("<h4>Sum of Two Numbers:</h4>");
+                document.write("First Number = " + +first_num);
+                document.write("<br>Second Number = " + +second_num);
+                document.write("<br><br>Sum of Numbers = " + sum);
 
-
+            }
+            else
+            {
+                alert("You didn't Enter Second Number\nSession Quit.")
+            }
+        }
+        else
+        {
+            alert("You Quit Session.")
+        }
 }
 function ques4(){
 	// Write a program that takes a character (i.e. string of
