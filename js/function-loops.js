@@ -355,29 +355,80 @@ function ques4(){
 }
 
 function ques5(){
-        // 5. Write a program to print items of the following array
-        // using for loop:
-        // fruits = [“apple”, “banana”, “mango”, “orange”,“strawberry”]
+        // 5. You have learned the function indexOf. Code your own custom
+            // function that will perform the same functionality. You can code
+            // for single character as of now.
+   
 
 
-        // declare
-        var fruits = [];
+            let total_marks_each_subject = 100;
 
-        // Initialize table num
-        fruits = [ "apple" ,  "banana",  "mango" ,  "orange" , "strawberry" ];
-
-        document.write("<h4>Print Array Item using Loop: </h4>");
-
-        // Display array items 
-        for(var a = 0 ; a < fruits.length ; a++)
-        {
-                document.write(fruits[a] + "<br>");
-        }
-        document.write("<br><br>");
-        for(var b = 0 ; b < fruits.length ; b++)
-        {
-                document.write("Elements at index " + b + " is " + fruits[b] + ".<br>");
-        }
+            let avg;
+            let percentage;
+            let marks;
+    
+            function fun_index_of( lower_input , lower_character  )
+            {
+    
+                let word_to_character = lower_input.split("");
+                
+                for(let a = 0 ; a < word_to_character.length ; a++)
+                {
+    
+                    if( word_to_character[a] == lower_character )
+                    {
+                        console.log( word_to_character[a] , a );
+                        return a;
+                    }
+    
+                }
+    
+                return -1;
+               
+            }
+    
+    
+            alert("Index Of Functionality:\nFind Position Of Character on First Match")
+    
+            let input = prompt("Enter Content:");
+            console.log( input );
+            let lower_input = input.toLowerCase();
+    
+            if( input != null ) 
+            {
+                let character = prompt("Enter Only One Character:");
+                let lower_character = character.toLowerCase();
+    
+                if( character!= null ) 
+                {
+                    let position_charac = fun_index_of( lower_input , lower_character );
+    
+                    if(position_charac >= 0)
+                    {
+                    
+                        document.write("<h4>Function that Perform Index Of Functionality:</h4>");
+                        
+                        document.write("<br>input: <b>" + input + "</b>");
+                        document.write("<br>character: <b>" + character + "</b>");
+    
+                        document.write("<br>Position of first occurence of character " + character + "</b> is " + position_charac);
+                    
+                    }
+                    else
+                    {
+                        alert("Character no found");
+                    }
+                }   
+                else
+                {
+                    alert("Your didn't enter character \nQuit Session.");
+                }
+    
+            }   
+            else
+            {
+                alert("Your didn't enter input \nQuit Session.");
+            } 
 }
 
 function ques6(){
