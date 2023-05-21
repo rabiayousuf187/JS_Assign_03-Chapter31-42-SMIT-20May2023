@@ -100,41 +100,23 @@ function ques6() {
  }
 
 function ques7() {
-  //  Guess game:
-  // Store a secret number (ranging from 1 to 10) in a variable.
-  // Prompt user to guess the secret number.
-  // a. If user guesses the same number, show “Bingo! Correct
-  // answer”.
-  // b. If the guessed number +1 is the secret number, show
-  // “Close enough to the correct answer”.
+    // Write a program that tests whether it's before noon and
+    // alert “Its AM” else “its PM”.
 
-  var secret_no;
+    
+  let curDate = new Date();
+  let hrs= curDate.getHours();
+  let min= curDate.getMinutes();
+  let sec = curDate.getSeconds();
 
-  var guess_no, close_no;
-
-  // First Store a secret no
-  secret_no = 5;
-
-  // Then Inpu a guess no from user
-  guess_no = +prompt(
-    "Input a Number, Which I Think in My Mind: \nRange( 1 - 10): "
-  );
-
-  close_no = guess_no + 1;
-  // console.log(guess_no);
-  // console.log(close_no);
-
-  if (secret_no == guess_no) {
-    alert("Bingo! Correct answer.");
-  } else if (secret_no == close_no) {
-    alert("Close enough to the correct answer.");
-  } else if (secret_no < guess_no + 2) {
-    alert("Your number is too large.");
-  } else if (secret_no > guess_no - 2) {
-    alert("Your number is too small.");
-  } else {
-    alert("You didn't answer.");
+  if( (hrs >=0 && hrs <=11) ){
+    alert("Its AM”");
   }
+    else if( hrs >11 && hrs <=23 ){
+        alert("Its PM”");
+
+  }
+    
 }
 
 function ques8() {
