@@ -12,18 +12,16 @@ function ques1(){
 function ques2(){
     // Write a program that alerts the current month in words.
     // For example December.
+    let curDate = new Date();
+    let curMonth = curDate.getMonth();
 
-     var gender = prompt("Enter the gender: ");
+    let month = months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-    if(gender === "male" || gender === "Male" || gender === "MALE"){
-        document.write("Good Morning Sir.");
-    }
-    else if(gender === "female" || gender === "Female" || gender === "FEMALE") {
-        document.write("Good Morning Ma'am.");
-    }
-    else{
-        document.write("You didn't Answer.");
-    }
+    console.log(`Current Month: ${month[curMonth]}`);
+    alert(`Current Month: ${month[curMonth]}`);
+
+    // document.writeln("<h1>Current Date:</h1>");
+    // document.writeln(`<p>${curDate}</p>`);
 }
 
 function ques3(){
