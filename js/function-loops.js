@@ -248,47 +248,110 @@ function ques3(){
 
 function ques4(){
         
-        //   4. Write a program to print multiplication table of any
-        //      number using for loop. Table number & length should be
-        //      taken as an input from user.
+      // 4. Write a function that receives marks received by a student in 3
+            // subjects and returns the average and percentage of these
+            // marks. there should be 3 functions one is the mainFunction
+            // and other are for average and percentage. Call those functions
+            // from mainFunction and display result in mainFunction.    
 
- 
-        // declare
-        var table_num, 
-            table_length,
-            table_result;
+        // document.write(cal_avg_percent());
+        let total_marks_each_subject = 100;
 
-        // Initialize table num
-        table_num = prompt("Enter a Number to show its multiplication table:")
-        
-        document.write("<h4>Multiplication table of " + table_num + ":</h4>");
+        let sub_1;
+        let sub_2;
+        let sub_3;
 
-        if ( table_num !== null)
+        var avg;
+        var percentage;
+        let marks;
+
+        function cal_avg_percent( sub_1 , sub_2 , sub_3 )
         {
-            // Initialize table length
-            table_length = prompt("Enter length of multiplication table:")
-            
-            document.write("<h4>Length " + table_length + ":</h4>");
-            
-            console.log(table_num, table_length);
+         
+            avg = cal_avg( sub_1 , sub_2 , sub_3 );
+            console.log(avg);
 
-            if ( table_length !== null)
+            marks = sub_1 + sub_2 + sub_3;
+            percentage = cal_percent(marks); 
+            console.log(percentage);
+
+            document.write("<h4>Calculate Subject Marks:</h4>");
+            
+            document.write("<br>Total Marks of each Subject = <b>" + total_marks_each_subject + "</b>");
+
+            document.write("<br>Subject 1= <b>" + sub_1 + "</b>");
+            document.write("<br>Subject 2= <b>" + sub_2 + "</b>");
+            document.write("<br>Subject 3= <b>" + sub_3 + "</b>");
+
+            document.write("<br><br>Average Marks of Subjects: <b>" + avg + "</b>");
+
+            document.write("<br><br>Percentage: <b>" + percentage + "%</b>");
+
+        }
+
+
+        function cal_avg( sub_1 , sub_2 , sub_3 )
+        {
+
+            avg = ( sub_1 + sub_2 + sub_3 ) / 3;
+            console.log("avg" , typeof avg , avg);
+            return avg;
+
+        }
+
+        function cal_percent(marks)
+        {
+
+            percentage = (  marks / 300 ) * 100;
+            console.log("percentage" , typeof percentage , percentage);
+            return percentage;
+
+        }
+
+
+        alert("Calculate Student Marks of Three Subjects:")
+
+        sub_1 = prompt("Enter Subject 1:");
+        console.log( +sub_1 );
+
+        if( sub_1 != null ) 
+        {
+            
+            sub_2 = prompt("Enter Subject 2:");
+            console.log( +sub_2 );
+
+            if( sub_2 != null )
             {
                 
-                for(var a = 1 ; a <= table_length ; a++)
-                {
-                    table_result = table_num * a;
-                    document.write(table_num + " * " + a + " = " + table_result + "<br>");
-                }
-            }
-            else{
-                alert("You didn't enter Table length\nSession has been terminated.")
-            }
-        }
-        else{
-            alert("You Quit the Session.")
-        }
+                sub_3 = prompt("Enter Subject 3:");
+                console.log( +sub_3 );
 
+                if( sub_3 != null )
+                {
+                      
+                    cal_avg_percent( +sub_1 , +sub_2 , +sub_3 );
+                
+                } 
+                else
+                {
+                    
+                    alert("Your didn't enter subject 3\nQuit Session.");
+                
+                } 
+            
+            } 
+            else
+            {
+                
+                alert("Your didn't enter subject 2\nQuit Session.");
+            
+            } 
+
+        }
+        else
+        {
+            alert("Your didn't enter subject 1\nQuit Session.");
+        } 
 }
 
 function ques5(){
