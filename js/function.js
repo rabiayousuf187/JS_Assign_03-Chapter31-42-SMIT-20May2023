@@ -743,6 +743,65 @@ function ques13(){
     } 
 
 }
-function ques8(){
-	
+function ques14(){
+	// 14. The Geometrizer
+        //      1. Create 2 functions that calculate properties of a circle, using
+        //     the definitions here.
+        //     Create a function called calcCircumference:
+        //     • Pass the radius to the function.
+        //     • Calculate the circumference based on the radius, and output
+        //     "The circumference is NN".
+
+        
+        //     2. Create a function called calcArea:
+        //     • Pass the radius to the function.
+        //     • Calculate the area based on the radius, and output "The area
+        //     is NN".
+        //     Circumference of circle = 2πr
+        //     Area of circle = πr2
+
+
+        let pie = 3.142;
+
+        function calcCircumference(radius)
+        {
+            let circumference_of_circle = 2 * pie * radius;
+            
+            return circumference_of_circle;
+        }
+
+        function  calcArea(radius)
+        {
+            let area_of_circle = pie * ( radius * radius);
+            
+            return area_of_circle;
+        }
+        //input radius ;
+        let radius = prompt("Enter Radius:\nFind Circumference and Area of Circle");
+
+        if( radius != null)
+        {
+            
+            let Circumference = calcCircumference( +radius );
+            Circumference = Circumference.toFixed(3);
+
+            let Area = calcArea( +radius );
+            Area = Area.toFixed(3);
+            
+            //Circumference of Circle:
+            document.write("<h4>Circumference of Circle:</h4>");
+            document.write("radius = " + +radius);
+            document.write("<br>Formula: 2 * π * r");
+            document.write("<br>The circumference of circle is " + Circumference);
+            
+            //
+            document.write("<h4>Area of Circle:</h4>");
+            document.write("radius = " + +radius);
+            document.write("<br>Formula: π * ( radius * radius)");
+            document.write("<br>The area of circle is " + Area);
+        }
+        else
+        {
+            alert("You Quit Session.")
+        }
 }
