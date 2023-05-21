@@ -83,12 +83,22 @@ function ques5() {
     alert("Invalid");
   }
 }
-function ques7() {
+function ques6() {
   // Write a program that determines the minutes since
   // midnight, Jan. 1, 1970 and assigns it to a variable that
   // hasn't been declared beforehand. Use any variable you like
   // to represent the Date object.
-}
+
+  let curDate = new Date();
+  let millisec= curDate.getTime();
+  let min = curDate.getTime()/(1000*60);
+
+  document.writeln(`Current Date: ${curDate} `);
+
+    document.writeln(`<p>Elapsed milliseconds since January 1, 1970:  ${millisec}</p>`); 
+    document.writeln(`Elapsed minutes since January 1, 1970: ${min}</p>`);
+ }
+
 function ques7() {
   //  Guess game:
   // Store a secret number (ranging from 1 to 10) in a variable.
