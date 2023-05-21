@@ -150,55 +150,28 @@ function ques4(){
 	}
 }
 function ques5(){
-	// Write a program that
-	// a. Store correct password in a JS variable.
-	// b. Asks user to enter his/her password
-	// c. Validate the two passwords:
-	// i. Check if user has entered password. If not, then
-	// give message “ Please enter your password”
-	// ii. Check if both passwords are same. If they are
-	// same, show message “Correct! The password you
-	// entered matches the original password”. Show
-	// “Incorrect password” otherwise.   
-	
-	//  first_pass-----Enter Your Password  
-	var first_pass = prompt("Enter Your Password:")
-	console.log("first_pass ====",first_pass);
+	// 5. Write a function that squares its argument.
 
-	//Check wether the user enter first password then
-	if(first_pass != null)
-	{	
-		//  confirm_pass-----Enter Your Password  
-		var confirm_pass = prompt("Enter Your Password Again for Verification:")
+	function fun_square(squ_num)
+	{
+		let squ_of_num  = Math.pow(squ_num , 2);
+		return squ_of_num;
+	}
 
-		// Check if both password is same
-		if ( confirm_pass != null )
-		{
-				// Check if both password is same
-				if ( first_pass === confirm_pass )
-				{
-					console.log("Message:\nCorrect! The password you entered matches the original password.");
-					alert("Message:\nCorrect! The password you entered matches the original password.");
-				}
-				// not same
-				else
-				{
-					console.log("Message:\nIncorrect password");
-					alert("Message:\nIncorrect password");
-				}
-		}
-		else
-		{
-			///cancel the prompt for first password
-			alert("You didn't confirm Password");
-		}
+	//input squ_num ;
+	let squ_num = prompt("Enter Number for Square:");
+
+	if( squ_num != null)
+	{
+		let square = fun_square(+squ_num);
+		document.write("<h4>Squaring: </h4>");
+		document.write("input Number = " + +squ_num);
+		document.write("<br>After Square = " + square);
 	}
 	else
 	{
-		//cancel the prompt for first password
-		alert("Please Enter Your Password.");
+		alert("You Quit Session.")
 	}
-
 }
 function ques6(){
 	//     This if/else statement does not work. Try to fix it:
