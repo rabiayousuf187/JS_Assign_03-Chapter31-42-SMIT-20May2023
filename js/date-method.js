@@ -1,22 +1,17 @@
 function ques1(){
-        // 1. Write a program to take “city” name as input from user. If
-        // user enters “Karachi”, welcome the user like this:
-        // “Welcome to city of lights”
+    // Write a program that displays current date and time in
+    // your browser.
         
-     var city = prompt("Enter The  City Name: ");
+    let curDate = new Date();
 
-    if(city === "Karachi" || city === "KARACHI"){
-        alert("Welcome to city of lights");
-    }
-    else {
-        alert("You enter: " + city);
-    }
+    document.writeln("<h1>Current Date:</h1>");
+    document.writeln(`<p>${curDate}</p>`);
+
 }
 
 function ques2(){
-//     Write a program to take “gender” as input from user. If the
-// user is male, give the message: Good Morning Sir. If the
-// user is female, give the message: Good Morning Ma’am. 
+    // Write a program that alerts the current month in words.
+    // For example December.
 
      var gender = prompt("Enter the gender: ");
 
@@ -32,8 +27,9 @@ function ques2(){
 }
 
 function ques3(){
-    // Write a program to take input color of road traffic signal
-    // from the user & show the message according to this table:
+//     Write a program that alerts the first 3 letters of the current
+// day, for example if today is Sunday then alert will show
+// Sun.
 
     var color = prompt("Enter the Color: ");
 
@@ -52,9 +48,8 @@ function ques3(){
 
 }
 function ques4(){
-    // 4. Write a program to take input remaining fuel in car (in
-    //     litres) from user. If the current fuel is less than 0.25litres,
-    //     show the message “Please refill the fuel in your car”    
+//     Write a program that displays a message “It’s Fun day” if
+// its Saturday or Sunday today.
 
     var fuel = +prompt("Input the remaining Fuel in your Car in liter: ");
     // document.write(fuel);
@@ -71,108 +66,9 @@ function ques4(){
 
 }
 function ques5(){
-    //     Run this script, & check whether alert message would be
-    // displayed or not. Record the outputs.
-    // a. var a = 4;
-    // if (++a === 5){
-    // alert("given condition for variable a is true");
-    // }
-    // User Input & Conditional Statement | JAVASCRIPT
-    // b. var b = 82;
-    // if (b++ === 83){
-    // alert("given condition for variable b is true");
-    // }
-    // c. var c = 12;
-    // if (c++ === 13){
-    // alert("condition 1 is true");
-    // }
-    // if (c === 13){
-    // alert("condition 2 is true");
-    // }
-    // if (++c < 14){
-    // alert("condition 3 is true");
-    // }
-    // if(c === 14){
-    // alert("condition 4 is true");
-    // }
-    // d. var materialCost = 20000;
-    // var laborCost = 2000;
-    // var totalCost = materialCost + laborCost;
-    // if (totalCost === laborCost + materialCost){
-    // alert("The cost equals");
-    // }
-    // e. if (true){
-    // alert("True");
-    // }
-    // if (false){
-    // alert("False");
-    // }
-    // User Input & Conditional Statement | JAVASCRIPT
-    // f. if("car" < "cat"){
-    // alert("car is smaller than cat");
-    // }
- 
-    var a = 4;
-    if (++a === 5){
-    alert("given condition for variable a is true");
-    }
-    // B
-    var b = 82;
-    if (b++ === 83){
-    alert("given condition for variable b is true");
-    } 
-
-    // c.
-    var c = 12;
-    if (c++ === 13){
-    alert("condition 1 is true");
-    }
-    if (c === 13){
-    alert("condition 2 is true");
-    }
-    if (++c < 14){
-    alert("condition 3 is true");
-    }
-    if(c === 14){
-    alert("condition 4 is true");
-    }
-    // d. 
-    var materialCost = 20000;
-    var laborCost = 2000;
-    var totalCost = materialCost + laborCost;
-    if (totalCost === laborCost + materialCost){
-    alert("The cost equals");
-    }
-    // E
-    if (true){
-    alert("True");
-    }
-    if (false){
-    alert("False");
-    }  
-    // f
-    if("car" < "cat"){
-    alert("car is smaller than cat");
-    } 
-
-}
-function ques6(){
-    // Write a program to take input the marks obtained in three
-    // subjects & total marks. Compute & show the resulting
-    // percentage on your page. Take percentage & compute
-    // grade as per following table:
-    
-
-    var first_subject, second_subject, third_subject;
-    var obtained_marks, total_marks, percentage, grade, remarks;
-    
-    // Input first_subject Marks
-    first_subject = +prompt("Enter Your First Subject Marks: ");
-
-    // Input second_subject Marks
-    second_subject = +prompt("Enter Your Second Subject Marks: ");
-
-    // Input third_subject Marks
+//     Write a program that shows the message “First fifteen
+// days of the month” if the date is less than 16th of the month
+// else shows “Last days of the month”.
     third_subject = +prompt("Enter Your Third Subject Marks: ");
 
     // Input total Marks
@@ -211,6 +107,13 @@ function ques6(){
     document.write("<h4>Percentage: " + percentage + "%</h4>");
     document.write("<h4>Grade: " + grade + "</h4>");
     document.write("<h4>Remarks: " + remarks + "</h4>");
+}
+function ques7(){
+        
+    // Write a program that determines the minutes since
+    // midnight, Jan. 1, 1970 and assigns it to a variable that
+    // hasn't been declared beforehand. Use any variable you like
+    // to represent the Date object.
 }
 function ques7(){
         
