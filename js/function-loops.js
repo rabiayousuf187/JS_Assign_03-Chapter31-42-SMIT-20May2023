@@ -781,19 +781,156 @@ function ques9(){
 }
 
 function ques10(){
-         //   10. Write a program to print multiples of 5 ranging 1 to 100.
+        // 10.  A cashier has currency notes of denominations 10, 50 and
+        //      100. If the amount to be withdrawn is input through the
+        //      keyboard in hundreds, find the total number of currency notes
+        //      of each denomination the cashier will have to give to the
+        //      withdrawer.
 
-        // declare
-        var number_for_multi = 5,	
-        	result = 1;
-
-        console.log("Print Multiples of 5 Ranging 1 to 100:");
-        document.write("<h4>Print Multiples of 5 Ranging 1 to 100:</h4>");
-        for(var a = 1 ; result < 100 ; a++)
+        let ten_less_50;
+        
+        function fun_input_draw( input_draw )
         {
-            console.log(a);
-       		result = a * number_for_multi;
-            document.write(result + ",");
+            
+            document.write("<h4>Withdraw Amount :</h4>");
+            document.write("<br>Withdraw Amount: <b>" + input_draw + "</b><br>");
+
+            amount_withdraw(input_draw);
+
+
+
         }
+
+
+        function amount_withdraw( input_draw )
+        {
+            let input_draw_deci = input_draw / 100;
+            console.log( input_draw_deci );
+            
+            let hundred = parseInt(input_draw_deci);
+            console.log( hundred );
+
+            let ten = input_draw - ( hundred * 100 );
+            console.log( ten );
+
+            if( ten == 0 )
+            {
+                console.log(input_draw_deci);
+                document.write("You will have <b>" + hundred + "</b> hundred notes.");
+        
+                // return input_draw_deci;
+            }
+            else
+            {
+
+                let find_tens = val_tens_50( ten );
+
+                if( ten == 50 )
+                {
+                    document.write("You will have <b>" + hundred + "</b> hundred notes <b>" + find_tens + " </b> fifty note.");
+                    // return input_draw_deci;
+                }
+                else
+                {
+
+                    if( ten > 50 )
+                    {
+                        
+                        let tens_last = val_tens( ten );
+                        
+                        document.write("You will have <b>" + hundred + "</b> hundred notes <b> 1 </b> fifty note <b>" + tens_last + "</b> ten notes.");
+                        // return input_draw_deci;
+                    
+                    }
+                    else
+                    {
+
+                        let tens_last = val_tens( ten );
+
+                        document.write("You will have <b>" + hundred + "</b> hundred notes <b>" + tens_last + "</b> ten notes.");
+                            
+                    }
+                      
+                }
+                
+            }
+
+        }
+
+        function val_tens_50( ten )
+        {
+            
+            let ten_50;
+
+            if( ten == 50)                             // only work for == 50
+            {
+
+                ten_50 = 1;
+                return 1;
+                console.log( ten_50 );
+
+            }
+        }
+
+
+        function val_tens( ten )
+        {
+            if( ten > 50  )
+            {
+
+                ten_less_50 = ten - 50;
+
+                ten_less_50 = ten_less_50 / 10;
+                console.log( ten_less_50 );
+                
+                return ten_less_50;
+
+            }
+            else
+            {
+
+                ten_less_50 = ten / 10;
+                console.log( ten_less_50 );
+
+                return ten_less_50;
+
+            }
+
+        }
+        
+
+
+//      Overtime is paid at the rate of Rs. 12.00 per hour
+        // let hundred = 100;   
+        // let hundred = 50;   
+        // let hundred = 10;   
+
+
+        alert("Withdraw Amount:");
+
+        let input_draw = prompt("Enter Withdrawn Amount is in Hundreds:\nRange: 100 -- 990\,\nleast step is 10");
+        console.log( input_draw );
+        
+        let input_draw_check = +input_draw / 100;
+        input_draw_check = parseInt(input_draw_check);
+        input_draw_check = +input_draw - (input_draw_check * 100 );        //value fetch after decimal
+        console.log( input_draw_check );
+        
+        let check_deci = input_draw_check / 10;
+        check_deci = parseInt(check_deci);
+        input_draw_check = +input_draw_check - ( check_deci * 10 );        //value fetch after decimal
+        console.log( input_draw_check );
+
+        if( input_draw != null && +input_draw >= 100 && +input_draw <= 999 && 
+        ( (+input_draw_check == 0 ) ) ) 
+        {
+            console.log(true);
+            let display_withdraw = fun_input_draw( +input_draw );
+            
+        }
+        else
+        {
+            alert("Your didn't enter Withdraw Amount in hundreds\nRange: 100 -- 990\,\nleast step is 10 \n\nQuit Session.");
+        } 
 }
 
