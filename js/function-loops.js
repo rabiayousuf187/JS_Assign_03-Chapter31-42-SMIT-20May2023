@@ -1,72 +1,248 @@
 function ques1(){
- //    1.   Declare and initialize an empty multidimensional array.
-        //         (Array of arrays)
+ // 1. Write a custom function power ( a, b ), to calculate the value of
+        // a raised to b.
 
-        // declare
-        var multi_dimension_array = [];
+        let power;
+        let base;
+        let result;
 
-        // Initialize
-        multi_dimension_array  = [
-                                  [], 
-                                  [],
-                                  [] 
-                                ];
+        function cal_power( base , power)
+        {
+            result = base;
 
-        document.write("var multi_dimension_array = [];<br>");
-        document.write(`Multi Deminsion Array:<br>multi_dimension_array  = [
-                [], 
-                [],
-                [] 
-              ];`);
-        console.log("Multi Deminsion Array: ", multi_dimension_array);
+            for(let a = 1 ; a < power ; a++ )
+            {
 
+                result = result * base;                 
+                console.log(result , a);
+
+            }
+
+            return result;
+        }
+
+
+
+        alert("Calculate Power:")
+
+        //input base;
+        base = prompt("Enter Base:");
+        if( base != null)
+        {
+            //input power;
+            let power = prompt("Enter Power:");
+
+            if( power != null)
+            {
+                
+                display_power = cal_power( +base , +power); 
+
+                console.log(base , power)
+                document.write("<h4>Calculate Power:</h4>");
+                document.write("Base = " + +base);
+                document.write("<br>Power = " + +power);
+                document.write("<br>a raised to b is equal to <b>" + display_power + "</b>");
+
+            }
+            else
+            {
+                alert("You didn't Enter Power\nSession Quit.")
+            }
+        }
+        else
+        {
+            alert("You didn't Enter Base\nYou Quit Session.")
+        } 
 
 }
 
 function ques2(){
+ // 2. Any year is entered through the keyboard. Write a function to
+        //    determine whether the year is a leap year or not.       
 
- //    2. Declare and initialize a multidimensional array
-        //       representing the following matrix:
 
-        // Show as
-                    // 0 1 2 3 
-                    // 1 0 1 2
-                    // 2 1 0 1  
-        // declare
-        var multi_dimension_array = [];
+        let input_year;
+        let display_leap_year;
+        let result;
 
-        // Initialize
-        multi_dimension_array  = [
-                                  [0 , 1 , 2 , 3], 
-                                  [1 , 0 , 1 , 2],
-                                  [2 , 1 , 0 , 1] 
-                                ];
-
-        console.log("Multi Deminsion Array: ", multi_dimension_array);
-        document.write("<h4>MultiDimension Array:</h4>");
-        for(var a = 0 ; a < 3 ; a++)
+        function check_leap_year( input_year )
         {
-            for(var b = 0 ; b < 4 ; b++)
+            
+            result = input_year % 4 ;
+
+            if( result == 0 )
             {
-                document.write(multi_dimension_array[a][b] + "&nbsp;&nbsp;");
+
+                return 0;
+
             }
-                document.write("<br>");
+            else
+            {
+
+                return result;
+
+            }
+
         }
 
+
+
+        //input power;
+        alert("Check Leap Year:")
+
+        input_year = prompt("Enter Year:");
+        if( ( input_year != null ) && ( input_year.length == 4 ) )
+        {
+
+            display_leap_year = check_leap_year( +input_year ); 
+
+            console.log( input_year );
+            document.write("<h4>Check Leap Year:</h4>");
+
+            if( display_leap_year == 0 )
+            {
+                
+                document.write("Input year <b>" + +input_year + "</b> is a leap year.");
+            
+            } 
+            else
+            {
+                
+                document.write("Input year <b>" + +input_year + "</b> is not a leap year.");
+            
+            } 
+
+        }
+        else
+        {
+            alert("You Quit Session.")
+        } 
 }
 
 function ques3(){
-         //    3. Write a program to print numeric counting from 1 to 10.
-  
-        // declare
-        var  count;
+          // 3. If the lengths of the sides of a triangle are denoted by a, b, and
+            // c, then area of triangle is given by:
 
-        // Initialize
-        document.write("<h4>Counting from 1 to 10: </h4>");
-        for(count  = 1; count <= 10 ; count++)
+            // area = S(S − a)(S − b)(S − c)
+
+            // where, S = ( a + b + c ) / 2     
+
+
+        let length_a;
+        let length_b;
+        let length_c;
+
+        let s;
+        let area_of_triangle;
+
+        function cal_area_of_triangle( length_a , length_b , length_c  )
         {
-          document.write(count + "<br>");
 
+            console.log("length_a" , typeof length_a , length_a);
+            console.log("length_b" , typeof length_b , length_b);
+            console.log("length_c" , typeof length_c , length_c);
+
+            s =  calculate_s( +length_a , +length_b , +length_c );
+            console.log("S" , typeof s , s);
+
+
+            if( s > +length_a && s > +length_b && s > +length_c)
+            {
+                
+                area_of_triangle = s *  ( ( s - +length_a ) * ( s - +length_b ) * ( s - +length_c ) );
+                console.log("area_of_triangle" , typeof area_of_triangle , area_of_triangle);
+                
+                return area_of_triangle;
+
+            }
+            else
+            {
+                
+                return false;
+
+            }
+
+        }
+
+// Calculate S:
+        function calculate_s( )
+        {
+            
+            let s = ( ( +length_a + +length_b + +length_c  ) / 2 );
+            console.log("S" , s);
+            
+            return s;
+
+        }
+
+
+
+        // side a = base;
+        // side b = perp;
+        // side c = htpo;
+
+
+        alert("Calculate Area of 3 Sided Triangle:")
+
+        length_a = prompt("Enter Length a:");
+        console.log( +length_a );
+
+        if( length_a != null ) 
+        {
+            
+            length_b = prompt("Enter Length b:");
+            console.log( +length_b );
+
+            if( length_b != null )
+            {
+                
+                length_c = prompt("Enter Length c:");
+                console.log( +length_c );
+
+                if( length_c != null )
+                {
+                    area_of_triangle = cal_area_of_triangle( +length_a , +length_b , +length_c  );
+                    
+                    if( area_of_triangle )
+                    {
+                        
+
+                        document.write("<h4>Calculate Area of 3 Sided Triangle::</h4>");
+                        
+                        document.write("<br>length side a = <b>" + +length_a + "</b>");
+                        document.write("<br>length side b = <b>" + +length_b + "</b>");
+                        document.write("<br>length side c = <b>" + +length_c + "</b>");
+
+                        document.write("<br><br>Area of Triangle is <b>" + area_of_triangle + "</b>");
+                    
+                    } 
+                    else if( area_of_triangle == false)
+                    {
+                        
+                        alert("Error!\nPlease Enter the Value which is smaller than S,\nS = ( a + b + c ) / 2");
+                    
+                    } 
+                    
+                } 
+                else
+                {
+                    
+                    alert("Your didn't enter length c\nQuit Session.");
+                
+                } 
+            
+            } 
+            else
+            {
+                
+                alert("Your didn't enter length b\nQuit Session.");
+            
+            } 
+
+        }
+        else
+        {
+            alert("Your didn't enter length a\nQuit Session.");
         }
 }
 
