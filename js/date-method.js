@@ -131,23 +131,19 @@ function ques8() {
 }
 
 function ques9() {
-  //     Write a program that checks whether the given input is an
-  // even number or an odd number.
+    // Create a date object of the starting date of this Ramadan
+    // and alert the number of days past since 1st Ramadan?
+    // Note: 1st Ramadan was on June 18, 2015
 
-  var input_num, result;
+  let ramadamStart = new Date("Mar 22, 2023").getTime();
 
-  // Then Inpu a guess no from user
-  input_num = +prompt("Input a Number, to Check Even or Odd: ");
+  let curDate = new Date().getTime();
 
-  result = input_num % 2;
+  let passDays = Math.round((curDate - ramadamStart)/(1000*60*60*24));
 
-  if (result == 0) {
-    document.write("Your given number " + input_num + " is Even.");
-  } else if (result !== 0) {
-    document.write("Your given number " + input_num + " is Odd.");
-  } else {
-    alert("You didn't answer.");
-  }
+  console.log(`${passDays} days have been passed since 1st Ramadan, 2023`);
+  alert(`${passDays} days have been passed since 1st Ramadan, 2023`);
+
 }
 
 function ques10() {
